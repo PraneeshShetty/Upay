@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>UPay - Offline</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #1F2937 0%, #374151 100%);
+            color: white;
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            padding: 20px;
+        }
+        
+        .offline-container {
+            max-width: 500px;
+            padding: 40px;
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            border-radius: 20px;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+        
+        .offline-icon {
+            font-size: 80px;
+            margin-bottom: 20px;
+            opacity: 0.8;
+        }
+        
+        h1 {
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+            color: #60A5FA;
+        }
+        
+        p {
+            font-size: 1.2rem;
+            line-height: 1.6;
+            margin-bottom: 30px;
+            opacity: 0.9;
+        }
+        
+        .retry-btn {
+            background: linear-gradient(135deg, #3B82F6 0%, #8B5CF6 100%);
+            color: white;
+            border: none;
+            padding: 15px 30px;
+            font-size: 1.1rem;
+            border-radius: 10px;
+            cursor: pointer;
+            transition: transform 0.2s, box-shadow 0.2s;
+            font-weight: 600;
+        }
+        
+        .retry-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 25px rgba(59, 130, 246, 0.3);
+        }
+        
+        .offline-features {
+            margin-top: 40px;
+            text-align: left;
+        }
+        
+        .feature-item {
+            display: flex;
+            align-items: center;
+            margin-bottom: 15px;
+            padding: 10px;
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 10px;
+        }
+        
+        .feature-icon {
+            margin-right: 15px;
+            font-size: 1.5rem;
+        }
+        
+        .feature-text {
+            font-size: 1rem;
+            opacity: 0.9;
+        }
+        
+        .language-selector {
+            margin-top: 30px;
+        }
+        
+        .language-btn {
+            background: rgba(255, 255, 255, 0.1);
+            color: white;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            padding: 8px 15px;
+            margin: 5px;
+            border-radius: 8px;
+            cursor: pointer;
+            font-size: 0.9rem;
+            transition: background 0.2s;
+        }
+        
+        .language-btn:hover {
+            background: rgba(255, 255, 255, 0.2);
+        }
+        
+        .language-btn.active {
+            background: #3B82F6;
+            border-color: #3B82F6;
+        }
+        
+        @media (max-width: 600px) {
+            h1 {
+                font-size: 2rem;
+            }
+            
+            p {
+                font-size: 1rem;
+            }
+            
+            .offline-container {
+                padding: 30px 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="offline-container">
+        <div class="offline-icon">📶</div>
+        <h1 id="title">You're Offline</h1>
+        <p id="description">
+            Don't worry! UPay works offline too. You can still access your saved content and practice scenarios.
+        </p>
+        
+        <button class="retry-btn" onclick="retryConnection()" id="retryBtn">
+            Try Again
+        </button>
+        
+        <div class="offline-features">
+            <div class="feature-item">
+                <span class="feature-icon">📚</span>
+                <span class="feature-text" id="feature1">Access saved educational content</span>
+            </div>
+            <div class="feature-item">
+                <span class="feature-icon">🎯</span>
+                <span class="feature-text" id="feature2">Practice fraud detection scenarios</span>
+            </div>
+            <div class="feature-item">
+                <span class="feature-icon">🔊</span>
+                <span class="feature-text" id="feature3">Voice guidance available</span>
+            </div>
+            <div class="feature-item">
+                <span class="feature-icon">🌍</span>
+                <span class="feature-text" id="feature4">Multi-language support</span>
+            </div>
+        </div>
+        
+        <div class="language-selector">
+            <button class="language-btn active" onclick="setLanguage('en')">English</button>
+            <button class="language-btn" onclick="setLanguage('hi')">हिंदी</button>
+            <button class="language-btn" onclick="setLanguage('bn')">বাংলা</button>
+        </div>
+    </div>
+
+    <script>
+        const translations = {
+            en: {
+                title: "You're Offline",
+                description: "Don't worry! UPay works offline too. You can still access your saved content and practice scenarios.",
+                retryBtn: "Try Again",
+                feature1: "Access saved educational content",
+                feature2: "Practice fraud detection scenarios", 
+                feature3: "Voice guidance available",
+                feature4: "Multi-language support"
+            },
+            hi: {
+                title: "आप ऑफलाइन हैं",
+                description: "चिंता न करें! UPay ऑफलाइन भी काम करता है। आप अभी भी अपनी सहेजी गई सामग्री और अभ्यास परिदृश्यों तक पहुँच सकते हैं।",
+                retryBtn: "पुनः प्रयास करें",
+                feature1: "सहेजी गई शैक्षिक सामग्री तक पहुँच",
+                feature2: "धोखाधड़ी का पता लगाने के परिदृश्यों का अभ्यास",
+                feature3: "आवाज़ मार्गदर्शन उपलब्ध",
+                feature4: "बहु-भाषा समर्थन"
+            },
+            bn: {
+                title: "আপনি অফলাইনে আছেন",
+                description: "চিন্তা করবেন না! UPay অফলাইনেও কাজ করে। আপনি এখনও আপনার সংরক্ষিত বিষয়বস্তু এবং অনুশীলন পরিস্থিতি অ্যাক্সেস করতে পারেন।",
+                retryBtn: "আবার চেষ্টা করুন",
+                feature1: "সংরক্ষিত শিক্ষামূলক বিষয়বস্তু অ্যাক্সেস",
+                feature2: "জালিয়াতি সনাক্তকরণ পরিস্থিতি অনুশীলন",
+                feature3: "ভয়েস গাইডেন্স উপলব্ধ",
+                feature4: "বহু-ভাষা সমর্থন"
+            }
+        };
+
+        let currentLanguage = 'en';
+
+        function setLanguage(lang) {
+            currentLanguage = lang;
+            updateContent();
+            
+            // Update active language button
+            document.querySelectorAll('.language-btn').forEach(btn => {
+                btn.classList.remove('active');
+            });
+            event.target.classList.add('active');
+        }
+
+        function updateContent() {
+            const t = translations[currentLanguage];
+            document.getElementById('title').textContent = t.title;
+            document.getElementById('description').textContent = t.description;
+            document.getElementById('retryBtn').textContent = t.retryBtn;
+            document.getElementById('feature1').textContent = t.feature1;
+            document.getElementById('feature2').textContent = t.feature2;
+            document.getElementById('feature3').textContent = t.feature3;
+            document.getElementById('feature4').textContent = t.feature4;
+        }
+
+        function retryConnection() {
+            if (navigator.onLine) {
+                window.location.href = '/';
+            } else {
+                // Animate button to show retry attempt
+                const btn = document.getElementById('retryBtn');
+                btn.style.opacity = '0.5';
+                btn.textContent = currentLanguage === 'hi' ? 'कनेक्ट हो रहा है...' : 
+                                 currentLanguage === 'bn' ? 'সংযোগ হচ্ছে...' : 'Connecting...';
+                
+                setTimeout(() => {
+                    btn.style.opacity = '1';
+                    updateContent();
+                }, 2000);
+            }
+        }
+
+        // Check for connection periodically
+        setInterval(() => {
+            if (navigator.onLine) {
+                document.getElementById('retryBtn').style.background = 'linear-gradient(135deg, #10B981 0%, #059669 100%)';
+                document.getElementById('retryBtn').textContent = currentLanguage === 'hi' ? 'वापस जाएं' : 
+                                                                 currentLanguage === 'bn' ? 'ফিরে যান' : 'Go Back Online';
+            }
+        }, 5000);
+    </script>
+</body>
+</html>

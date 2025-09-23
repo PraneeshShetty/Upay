@@ -1,0 +1,14 @@
+<svg width="384" height="384" viewBox="0 0 384 384" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <!-- Background -->
+  <rect width="384" height="384" rx="84" fill="#059669"/>
+  
+  <!-- Shield Icon -->
+  <path d="M192 64L256 96V170.67C256 224 216 270 192 288C168 270 128 224 128 170.67V96L192 64Z" fill="white"/>
+  
+  <!-- Security Lock -->
+  <rect x="160" y="160" width="64" height="52" rx="12" fill="#059669"/>
+  <path d="M176 160V144C176 135.16 183.16 128 192 128C200.84 128 208 135.16 208 144V160" stroke="#059669" stroke-width="8" fill="none"/>
+  
+  <!-- UPI Text -->
+  <text x="192" y="264" font-family="Arial, sans-serif" font-size="40" font-weight="bold" text-anchor="middle" fill="white">UPay</text>
+</svg>

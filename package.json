@@ -1,0 +1,58 @@
+{
+  "name": "upay",
+  "private": true,
+  "version": "1.0.0",
+  "type": "module",
+  "description": "UPI Fraud Prevention and Education Platform for Rural Communities",
+  "keywords": [
+    "UPI",
+    "fraud prevention",
+    "education",
+    "rural",
+    "PWA",
+    "fintech"
+  ],
+  "scripts": {
+    "dev": "vite",
+    "build": "tsc -b && vite build",
+    "lint": "eslint .",
+    "preview": "vite preview",
+    "serve": "vite preview --host",
+    "build:pwa": "npm run build && npm run serve"
+  },
+  "dependencies": {
+    "@clerk/clerk-react": "^5.48.1",
+    "@google/generative-ai": "^0.24.1",
+    "@gsap/react": "^2.1.2",
+    "@headlessui/react": "^2.2.8",
+    "@heroicons/react": "^2.2.0",
+    "@types/react-router-dom": "^5.3.3",
+    "autoprefixer": "^10.4.21",
+    "framer-motion": "^12.23.19",
+    "gsap": "^3.13.0",
+    "lucide-react": "^0.544.0",
+    "motion": "^12.23.19",
+    "postcss": "^8.5.6",
+    "postprocessing": "^6.37.8",
+    "react": "^19.1.1",
+    "react-dom": "^19.1.1",
+    "react-icons": "^5.5.0",
+    "react-router-dom": "^7.9.1",
+    "tailwindcss": "^3.4.15",
+    "three": "^0.180.0"
+  },
+  "devDependencies": {
+    "@eslint/js": "^9.36.0",
+    "@types/react": "^19.1.13",
+    "@types/react-dom": "^19.1.9",
+    "@types/three": "^0.180.0",
+    "@vitejs/plugin-react": "^5.0.3",
+    "eslint": "^9.36.0",
+    "eslint-plugin-react-hooks": "^5.2.0",
+    "eslint-plugin-react-refresh": "^0.4.20",
+    "globals": "^16.4.0",
+    "typescript": "~5.8.3",
+    "typescript-eslint": "^8.44.0",
+    "vite": "^7.1.7"
+  }
+}
