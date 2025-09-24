@@ -27,7 +27,7 @@ interface LanguageProviderProps {
 
 export const LanguageProvider = ({ children }: LanguageProviderProps) => {
   const [currentLanguage, setCurrentLanguage] = useState(() => {
-    return localStorage.getItem('upay-language') || 'hi'; // Default to Hindi for rural users
+    return localStorage.getItem('upay-language') || 'en'; // Default to English
   });
   
   const [isVoiceEnabled, setIsVoiceEnabled] = useState(() => {
