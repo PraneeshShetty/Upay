@@ -111,6 +111,29 @@ const About = () => {
             ))}
           </div>
         </section>
+
+        {/* Educational Video Section */}
+        <section id="educational-video" className="mb-20">
+          <motion.h2
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6 }}
+            className="text-3xl font-display font-bold text-center mb-8"
+          >
+            Educational Video
+          </motion.h2>
+          <div className="flex justify-center">
+            <iframe
+              width="560"
+              height="315"
+              src="https://www.youtube.com/embed/YOUR_VIDEO_ID"
+              title="UPay Demo"
+              frameBorder="0"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+              allowFullScreen
+            ></iframe>
+          </div>
+        </section>
       </div>
     </div>
   );
